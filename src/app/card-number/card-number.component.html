@@ -1,0 +1,7 @@
+<div class="input-group">
+  <div *ngFor="let control of numbersForm.controls; index as i">
+    <input class="form-control card-number-unit mr-2" maxlength="4" minlength="4"
+           [formControl]="numbersForm.controls[i]" required
+           [class.is-invalid]="numbersForm.touched && numbersForm.controls[i].errors">
+  </div>
+</div>

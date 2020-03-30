@@ -1,0 +1,25 @@
+<table class="table table-bordered mt-5 w-100">
+  <thead>
+  <tr>
+    <th scope="col">№</th>
+    <th scope="col">Карта плательщика</th>
+    <th scope="col">Карта получателя</th>
+    <th scope="col">Сумма</th>
+    <th scope="col">Дата выполнения</th>
+    <th scope="col">Действие</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of history; let i = index">
+    <th scope="row">{{i+1}}</th>
+    <td>{{item.cardNumber}}</td>
+    <td>{{item.receiverCardNumber}}</td>
+    <td>{{item.sum}}</td>
+    <td>{{item.date | date: 'dd.MM.yyyy'}}</td>
+    <td>
+      <button class="btn btn-sm btn-outline-primary mr-2" (click)="onClickRepay(i)">повторить</button>
+      <button class="btn btn-sm btn-outline-primary" (click)="onClickDelete(i)">удалить</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
